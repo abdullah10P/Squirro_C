@@ -1,15 +1,17 @@
-// Squiro code challenge
+// api.js
 
-const hit_api = 'http://localhost:3000/stores'
-
+const hit_api = 'http://localhost:3000/stores';
 
 export const getStores = async () => {
-    const response = await fetch(hit_api);
-    const data = await response.json();
-    if (!data) {
-        throw new Error(data.message);
+    try {
+        const response = await fetch(hit_api);
+        if (!response.ok) {
+            throw new Error(`Error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Failed to fetch stores:", error);
+        throw error; 
     }
-    return data
 };
-
-

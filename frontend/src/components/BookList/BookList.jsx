@@ -1,22 +1,15 @@
 
 import React from 'react';
+import { getAuthorsMap, getStoreBooks } from './BookUtils';
+import { NO_DATA_AVAILABLE } from '../../constants';
+import './styles.scss';
 
 const BookList = ({ books, included }) => {
-    const authorsMap = included.filter(item => item.type === 'authors').reduce((map, item) => {
-        map[item.id] = item.attributes.fullName;
-        return map;
-    }, {});
+    const authorsMap = getAuthorsMap(included);
 
-    const storeBooks = books.map(book => {
-        const bookData = included.find(inc => inc.type === 'books' && inc.id === book.id).attributes;
-        const authorRelationship = included.find(inc => inc.type === 'books' && inc.id === book.id).relationships.author;
-        const authorId = authorRelationship ? authorRelationship.data.id : null;
-        const authorFullName = authorId ? authorsMap[authorId] : 'No author information available';
-        return {
-            ...bookData,
-            author: authorFullName
-        };
-    });
+    const storeBooks = getStoreBooks(books, included, authorsMap);
+
+
 
     return (
         <div className="books">
@@ -36,7 +29,7 @@ const BookList = ({ books, included }) => {
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="2">No data available</td>
+                            <td colSpan="2">{NO_DATA_AVAILABLE}</td>
                         </tr>
                     )}
                 </tbody>

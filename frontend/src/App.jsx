@@ -1,14 +1,12 @@
-
 import React from 'react';
-import StoreList from './components/StoreList';
-import './styles.css'; 
+import StoreList from './components/StoreList/StoreList';
+import './styles.scss'; 
 
 const App = () => {
     return (
         <div className="App">
-
             <main>
-                <StoreList />
+                <StoreList data-testid="store-container" />
             </main>
         </div>
     );

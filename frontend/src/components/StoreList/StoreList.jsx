@@ -1,19 +1,24 @@
-// src/components/StoreList.jsx
-
 import React, { useEffect, useState } from 'react';
-import Store from './Store';
+import Store from '../Store/Store';
+import { getStores } from '../../api';
+import './styles.scss';
 
 const StoreList = () => {
     const [stores, setStores] = useState([]);
     const [included, setIncluded] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/stores')
-            .then(response => response.json())
-            .then(data => {
+        const fetchData = async () => {
+            try {
+                const data = await getStores();
                 setStores(data.data);
                 setIncluded(data.included);
-            });
+            } catch (error) {
+                console.error('Error fetching stores:', error);
+            }
+        };
+
+        fetchData();
     }, []);
 
     return (
