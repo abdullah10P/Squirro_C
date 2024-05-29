@@ -1,6 +1,6 @@
 $text-color: #666;
 
-
+@import '../../mixins';
 
 .establishment-date {
     color: $text-color;
@@ -12,16 +12,15 @@ $text-color: #666;
 
         .store-image-container {
             margin-right: 0;
-            margin-bottom: 20px;
+            margin-bottom: 1.3rem;
         }
 
         .store-footer {
-            flex-direction: column;
-            align-items: flex-start;
+            @include flex-direction-align;
 
             .flag {
                 margin-left: 0;
-                margin-top: 10px;
+                margin-top: 0.6rem;
             }
         }
     }
@@ -29,8 +28,7 @@ $text-color: #666;
 
 @media (max-width: 480px) {
     .store-header {
-        flex-direction: column;
-        align-items: flex-start;
+        @include flex-direction-align;
     }
 
     .store-footer {

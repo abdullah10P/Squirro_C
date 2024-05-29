@@ -1,4 +1,4 @@
-$gold-color: gold;
+$gold-color: #FFD700;
 
 
 @media (max-width: 480px) {
@@ -10,7 +10,7 @@ $gold-color: gold;
 
 .rating {
     .star {
-        font-size: 20px;
+        font-size: 1.3rem;
         color: $gold-color;
     }
 }

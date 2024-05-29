@@ -34,14 +34,15 @@ const Store = ({ store, included }) => {
             <div className="store-details">
                 <StoreInfo store={store} />
                 <BookList books={storeRelationships.books?.data || []} included={included} />
-                <div className="store-footer">
+
+            </div>
+            <div className="store-footer">
                     <p className="establishment-date">
                         {formattedDate} - <a href={storeAttributes.website} target="_blank" rel="noopener noreferrer">
                         {sanitizedWebsite}</a>
                     </p>
                     <img className="flag" src={flagUrl} alt={storeCountries.code} />
                 </div>
-            </div>
         </div>
     );
 };
