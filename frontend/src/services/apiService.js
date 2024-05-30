@@ -1,5 +1,5 @@
-// api.js
 
+import { ERROR_FETCHING_DATA } from "../utils/constants";
 const hit_api = 'http://localhost:3000/stores';
 
 export const getStores = async () => {
@@ -11,7 +11,7 @@ export const getStores = async () => {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Failed to fetch stores:", error);
+        console.error(ERROR_FETCHING_DATA, error);
         throw error; 
     }
 };

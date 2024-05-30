@@ -5,9 +5,7 @@ import './styles.scss';
 const App = () => {
     return (
         <div className="App">
-            <main>
-                <StoreList data-testid="store-container" />
-            </main>
+            <StoreList data-testid="store-container" />
         </div>
     );
 };

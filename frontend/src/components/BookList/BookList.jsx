@@ -1,12 +1,10 @@
-
 import React from 'react';
 import { getAuthorsMap, getStoreBooks } from './BookUtils';
-import { NO_DATA_AVAILABLE } from '../../constants';
+import { NO_DATA_AVAILABLE, BEST_SELLING_BOOKS } from '../../utils/constants';
 import './styles.scss';
 
 const BookList = ({ books, included }) => {
     const authorsMap = getAuthorsMap(included);
-
     const storeBooks = getStoreBooks(books, included, authorsMap);
 
 
@@ -16,7 +14,7 @@ const BookList = ({ books, included }) => {
             <table>
                 <thead>
                     <tr>
-                        <th colSpan="2" className="text-left">Best-selling books</th>
+                        <th colSpan="2" className="text-left">{BEST_SELLING_BOOKS}</th>
                     </tr>
                 </thead>
                 <tbody>

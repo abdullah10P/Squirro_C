@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Store from '../Store/Store';
-import { getStores } from '../../api';
+import { getStores } from '../../services/apiService';
 import './styles.scss';
+import {ERROR_FETCHING_DATA} from '../../utils/constants';
 
 const StoreList = () => {
     const [stores, setStores] = useState([]);
@@ -14,7 +15,8 @@ const StoreList = () => {
                 setStores(data.data);
                 setIncluded(data.included);
             } catch (error) {
-                console.error('Error fetching stores:', error);
+                alert(ERROR_FETCHING_DATA);
+                console.error(ERROR_FETCHING_DATA, error);
             }
         };
 

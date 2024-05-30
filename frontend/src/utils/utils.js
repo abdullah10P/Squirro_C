@@ -1,5 +1,6 @@
 
-import { FLAG_API, FALLBACK_FLAG_API } from './config';
+import { FLAG_API, FALLBACK_FLAG_API } from '../config';
+import { PRIMARY_URL_FAIL } from './constants';
 
 export const sanitizeUrl = (url) => {
     return url.replace(/^https?:\/\//, '');
@@ -14,7 +15,7 @@ export const getFlagUrl = async (countryCode) => {
         if (response.ok || response.type === 'opaque') {
             return primaryUrl;
         }
-        throw new Error('Primary URL failed');
+        throw new Error(PRIMARY_URL_FAIL);
     } catch (error) {
         return fallbackUrl;
     }
