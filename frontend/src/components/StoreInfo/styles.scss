@@ -1,16 +1,15 @@
-$gold-color: #FFD700;
-
+$gold-color: #ffd700;
 
 @media (max-width: 480px) {
-    .store-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .store-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .rating {
-    .star {
-        font-size: 1.3rem;
-        color: $gold-color;
-    }
+  .star {
+    font-size: 1.3rem;
+    color: $gold-color;
+  }
 }
