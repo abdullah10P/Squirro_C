@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAuthorsMap, getStoreBooks } from './BookUtils';
+import { getAuthorsMap, getStoreBooks } from '../../utils/BookUtils';
 import { NO_DATA_AVAILABLE, BEST_SELLING_BOOKS } from '../../utils/constants';
 import './styles.scss';
 

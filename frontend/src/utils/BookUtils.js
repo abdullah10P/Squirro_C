@@ -1,4 +1,4 @@
-import { AUTHORS,BOOKS,NO_AUTHOR_INFORMATION,NO_NAME,BOOK_NOT_FOUND } from "../../utils/constants";
+import { AUTHORS,BOOKS,NO_AUTHOR_INFORMATION,NO_NAME,BOOK_NOT_FOUND } from "./constants";
 
 export const getAuthorsMap = (included) => {
     return included.filter(item => item.type === AUTHORS).reduce((map, item) => {
