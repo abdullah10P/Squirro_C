@@ -1,6 +1,4 @@
-import { AUTHORS } from "../../utils/constants";
-import { BOOKS } from "../../utils/constants";
-import { NO_AUTHOR_INFORMATION,NO_NAME } from "../../utils/constants";
+import { AUTHORS,BOOKS,NO_AUTHOR_INFORMATION,NO_NAME,BOOK_NOT_FOUND } from "../../utils/constants";
 
 export const getAuthorsMap = (included) => {
     return included.filter(item => item.type === AUTHORS).reduce((map, item) => {
@@ -15,10 +13,10 @@ export const getStoreBooks = (books, included, authorsMap) => {
         const foundBook = included.find(inc => inc.type === BOOKS && inc.id === book.id);
 
         if (!foundBook) {
-            console.error(`Book with ID ${book.id} not found in included data.`);
+            console.error(BOOK_NOT_FOUND.replace("{id}", book.id));
             return null;
         }
-        
+
         const bookData = foundBook.attributes;
         const authorRelationship = foundBook.relationships.author;
         const authorId = authorRelationship ? authorRelationship.data.id : null;
