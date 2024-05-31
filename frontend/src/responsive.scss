@@ -1,0 +1,47 @@
+@import "./mixins.scss";
+
+@media (max-width: 480px) {
+    .store-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+
+@media (max-width: 768px) {
+.store {
+    flex-direction: column;
+
+    .store-image-container {
+    margin-right: 0;
+    margin-bottom: 1.3rem;
+    }
+
+    .store-footer {
+    @include flex-direction-align;
+
+    .flag {
+        margin-left: 0;
+        margin-top: 0.6rem;
+    }
+    }
+}
+}
+
+@media (max-width: 480px) {
+.store-header {
+    @include flex-direction-align;
+}
+
+.store-footer {
+    align-items: flex-start;
+
+    .establishment-date {
+    text-align: left;
+    }
+
+    .flag {
+    align-self: flex-start;
+    }
+}
+}
