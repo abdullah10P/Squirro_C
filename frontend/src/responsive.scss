@@ -1,47 +1,63 @@
 @import "./mixins.scss";
 
 @media (max-width: 480px) {
+  .store {
+    flex-direction: column;
+    position: relative; 
+
     .store-header {
+      @include flex-direction-align;
       flex-direction: column;
       align-items: flex-start;
-    }
-  }
-
-
-@media (max-width: 768px) {
-.store {
-    flex-direction: column;
-
-    .store-image-container {
-    margin-right: 0;
-    margin-bottom: 1.3rem;
+      margin-bottom: 1rem; 
     }
 
     .store-footer {
-    @include flex-direction-align;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 100%; 
 
-    .flag {
+      .establishment-date {
+        text-align: left;
+      }
+
+      .flag {
+        position: absolute; 
+        right: 1rem; 
+        bottom: 1rem; 
+        margin: 0;
+      }
+    }
+
+    .store-image-container {
+      margin-right: 0;
+      margin-bottom: 1.3rem;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .store {
+    flex-direction: column;
+    position: relative;
+
+    .store-image-container {
+      margin-right: 0;
+      margin-bottom: 1.3rem;
+    }
+
+    .store-footer {
+      @include flex-direction-align;
+      width: 100%;
+
+      .flag {
+        position: absolute;
+        right: 1rem; 
+        bottom: 1rem; 
         margin-left: 0;
-        margin-top: 0.6rem;
+        margin-top: 0; 
+      }
     }
-    }
-}
-}
-
-@media (max-width: 480px) {
-.store-header {
-    @include flex-direction-align;
-}
-
-.store-footer {
-    align-items: flex-start;
-
-    .establishment-date {
-    text-align: left;
-    }
-
-    .flag {
-    align-self: flex-start;
-    }
-}
+  }
 }
