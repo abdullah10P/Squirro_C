@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { STAR_FILLED, STAR_EMPTY } from "../../utils/constants";
+import { STAR_FILLED, STAR_EMPTY,STAR_COUNT } from "../../utils/constants";
 
 const StoreInfo = ({ store }) => {
   const storeAttributes = store.attributes;
@@ -13,7 +13,7 @@ const StoreInfo = ({ store }) => {
       </span>
     );
   }
-  for (let i = storeAttributes.rating; i < 5; i++) {
+  for (let i = storeAttributes.rating; i < STAR_COUNT; i++) {
     ratingStars.push(
       <span key={i} className="star">
         {STAR_EMPTY}

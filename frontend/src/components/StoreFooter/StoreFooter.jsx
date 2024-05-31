@@ -1,5 +1,6 @@
 import React from "react";
 import { sanitizeUrl } from "../../utils/utils";
+import { HTTP } from "../../utils/constants";
 
 const StoreFooter = ({ establishmentDate, website, flagUrl, countryCode }) => {
   const formattedDate = new Date(establishmentDate).toLocaleDateString(
@@ -17,7 +18,7 @@ const StoreFooter = ({ establishmentDate, website, flagUrl, countryCode }) => {
     <div className="store-footer">
       <p className="establishment-date">
         {formattedDate} -{" "}
-        <a href={`http://${website}`} target="_blank" rel="noopener noreferrer">
+        <a href={`${HTTP}${website}`} target="_blank" rel="noopener noreferrer">
           {sanitizedWebsite}
         </a>
       </p>

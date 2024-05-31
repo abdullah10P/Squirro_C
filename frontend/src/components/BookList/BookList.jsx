@@ -1,6 +1,6 @@
 import React from "react";
 import { getAuthorsMap, getStoreBooks } from "../../utils/BookUtils";
-import { NO_DATA_AVAILABLE, BEST_SELLING_BOOKS } from "../../utils/constants";
+import { NO_DATA_AVAILABLE, BEST_SELLING_BOOKS, BOOK_COUNT} from "../../utils/constants";
 import "./styles.scss";
 
 const BookList = ({ books, included }) => {
@@ -19,7 +19,7 @@ const BookList = ({ books, included }) => {
         </thead>
         <tbody>
           {storeBooks.length > 0 ? (
-            storeBooks.slice(0, 2).map((book, index) => (
+            storeBooks.slice(0, BOOK_COUNT).map((book, index) => (
               <tr key={index}>
                 <td>{book.name}</td>
                 <td>{book.author}</td>

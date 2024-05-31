@@ -10,3 +10,6 @@ export const PRIMARY_URL_FAIL = "Primary URL failed";
 export const BOOK_NOT_FOUND = "Book with ID {id} not found in included data.";
 export const STAR_FILLED = "★";
 export const STAR_EMPTY = "☆";
+export const STAR_COUNT = 5;
+export const BOOK_COUNT = 2;
+export const HTTP = "http://";
