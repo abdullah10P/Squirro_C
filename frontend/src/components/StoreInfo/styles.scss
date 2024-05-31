@@ -1,8 +1,16 @@
+
 $gold-color: #ffd700;
+@import "../../mixins";
 
 .rating {
   .star {
     font-size: 1.3rem;
     color: $gold-color;
   }
+}
+
+.store-header {
+  @include flex-space-between-center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }

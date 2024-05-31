@@ -24,7 +24,7 @@ const StoreInfo = ({ store }) => {
   return (
     <div className="store-info">
       <div className="store-header">
-        <h3>{storeAttributes.name}</h3>
+        <h2>{storeAttributes.name}</h2>
         <div className="rating">{ratingStars}</div>
       </div>
     </div>

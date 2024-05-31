@@ -3,14 +3,13 @@ import { sanitizeUrl } from "../../utils/utils";
 import { HTTP } from "../../utils/constants";
 
 const StoreFooter = ({ establishmentDate, website, flagUrl, countryCode }) => {
-  const formattedDate = new Date(establishmentDate).toLocaleDateString(
-    "en-GB",
-    {
+  const formattedDate = new Date(establishmentDate)
+    .toLocaleDateString("en-GB", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
-    }
-  );
+    })
+    .replace(/\//g, ".");
 
   const sanitizedWebsite = sanitizeUrl(website);
 
