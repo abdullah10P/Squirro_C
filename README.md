@@ -59,6 +59,18 @@ If you need any other endpoint, check the JSON:API specification.
 - `cd` inside `book-store-api` folder and run `npm install`
 - Serve it on the port 3000 by running `npm run start`
 
+#### Running Frontend:
+1. Navigate to the frontend directory:
+
+2. Install the necessary dependencies:
+        Run `npm install`
+        
+3. Start the frontend server:
+        Run `npm run start`
+
+4. The app will run on localhost:4000
+Open your browser and go to http://localhost:4000 to see the application running.
+
 #### Commiting:
 - Please do not open pull requests against our repository!
 - Instead, create your repository and send that over
