@@ -10,6 +10,7 @@ const Store = ({ store, included }) => {
   const [flagUrl, setFlagUrl] = useState("");
   const storeAttributes = store.attributes || {};
   const storeRelationships = store.relationships || {};
+  
 
   const storeCountries =
     included.find(

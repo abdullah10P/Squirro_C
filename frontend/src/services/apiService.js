@@ -1,9 +1,9 @@
 import { ERROR_FETCHING_DATA } from "../utils/constants";
-import { HIT_API } from "../config";
+import { API_URL } from "../config";
 
 export const getStores = async () => {
   try {
-    const response = await fetch(HIT_API);
+    const response = await fetch(API_URL);
     if (!response.ok) {
       throw new Error(`Error! status: ${response.status}`);
     }
